@@ -170,7 +170,7 @@ export default function LandingPage() {
                   <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-3 border-r-3 border-t-3 border-transparent border-t-black/90"></div>
                 </div>
                 <Image
-                  src="/tablet-mockup.png"
+                  src="/A1.png"
                   alt="Unruggable Tablet Interface"
                   width={280}
                   height={400}
