@@ -49,7 +49,7 @@ const platforms = [
     ),
     status: 'coming-soon',
     downloadUrl: '#',
-    description: 'TestFlight Beta Testing',
+    description: 'TestFlight Alpha Testing',
     version: 'Coming Soon'
   },
   {
@@ -68,16 +68,16 @@ const platforms = [
 
 const faqs = [
   {
-    question: "What is the Unruggable alpha program?",
-    answer: "Our alpha program gives you early access to the latest Unruggable features before they're released to the public. Help us test new functionality and provide feedback to shape the future of secure trading."
+    question: "How to Install?",
+    answer: "On MacOs, just double click the downloaded .dmg file and drag unruggable into your applications."
   },
   {
     question: "Is the alpha version safe to use?",
-    answer: "The alpha version is designed for testing purposes and may contain bugs. While we implement the same security standards, we recommend using it alongside your main wallet, not as a replacement during the testing phase."
+    answer: "The alpha version is still experimental, so ensure access to wallets is backed up. We reccomend importing a wallet from elsewhere for stress free testing."
   },
   {
     question: "How often are alpha builds updated?",
-    answer: "We release new alpha builds weekly or bi-weekly depending on the development cycle. You'll be notified of updates through the app and our social channels."
+    answer: "We release new builds frequently, following a feedback/user based development cycle. New feature = new build."
   },
   {
     question: "What platforms will be supported?",
@@ -85,7 +85,11 @@ const faqs = [
   },
   {
     question: "How do I report bugs or provide feedback?",
-    answer: "You can report bugs through our GitHub issues page or reach out on our social channels. We actively monitor all feedback and use it to improve the app."
+    answer: "Thank you for providing feedback. We're a 3 person team with one dev, so please bear with us, but we do read every message. Let us know on X or github as shown at the bottom of this page."
+  },
+  {
+    question: "wen hardware?",
+    answer: "We're currently working on some dev units, and hoping to be able to move to production before the end of 2025."
   }
 ]
 
@@ -107,7 +111,7 @@ export default function AlphaPage() {
       <header className="border-b border-gray-800 bg-black/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <a 
-            href="/" 
+            href="https://unruggable.io" 
             className="text-white hover:text-gray-300 transition-colors flex items-center gap-2"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -143,27 +147,18 @@ export default function AlphaPage() {
       <main className="max-w-7xl mx-auto px-6">
         {/* Hero Section */}
         <section className="py-20 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-purple-500/20 border border-purple-500/30 rounded-full text-purple-300 text-sm mb-8">
-            <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
-            Alpha Program
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-500/20 border border-green-500/30 rounded-full text-green-300 text-sm mb-8">
+            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+            Alpha Testing
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent">
-            A crypto wallet app and<br />Web3 gateway
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-green-200 to-white bg-clip-text text-transparent">
+            Unruggable Alpha
           </h1>
           
           <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
-            The best crypto app to secure your tokens. Get early access to cutting-edge features and help shape the future of DeFi.
+            The first hardware wallet engineered and designed exclusively for Solana. Now available in Alpha.
           </p>
-
-          <div className="flex items-center justify-center gap-1 text-yellow-400 mb-4">
-            {[1,2,3,4,5].map((star) => (
-              <svg key={star} width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-              </svg>
-            ))}
-          </div>
-          <p className="text-sm text-gray-500">Trusted by alpha testers worldwide</p>
         </section>
 
         {/* Download Section */}
@@ -217,8 +212,7 @@ export default function AlphaPage() {
         {/* FAQ Section */}
         <section className="py-20">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold mb-4">FAQs</h2>
-            <p className="text-gray-400 mb-12">about the Unruggable alpha program</p>
+            <h2 className="text-4xl font-bold mb-12">FAQs</h2>
             
             <div className="space-y-4">
               {faqs.map((faq, index) => (
@@ -259,34 +253,16 @@ export default function AlphaPage() {
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-3 h-3 bg-green-400 rounded-full"></div>
                 <span className="text-sm font-mono text-green-400">v1.0.6 - Alpha</span>
-                <span className="text-sm text-gray-500">Released 2 days ago</span>
+                <span className="text-sm text-gray-500">Released 24/09/2025</span>
               </div>
               
               <div className="space-y-6">
                 <div>
                   <h4 className="font-semibold text-green-300 mb-2">✨ New Features</h4>
                   <ul className="text-gray-300 space-y-1 ml-4">
-                    <li>• Enhanced security protocols for transaction monitoring</li>
-                    <li>• Improved wallet connection stability</li>
-                    <li>• New dark theme optimizations</li>
-                  </ul>
-                </div>
-                
-                <div>
-                  <h4 className="font-semibold text-blue-300 mb-2">🔧 Improvements</h4>
-                  <ul className="text-gray-300 space-y-1 ml-4">
-                    <li>• 40% faster sync times</li>
-                    <li>• Better error handling and user feedback</li>
-                    <li>• Streamlined onboarding process</li>
-                  </ul>
-                </div>
-                
-                <div>
-                  <h4 className="font-semibold text-red-300 mb-2">🐛 Bug Fixes</h4>
-                  <ul className="text-gray-300 space-y-1 ml-4">
-                    <li>• Fixed occasional crash on startup</li>
-                    <li>• Resolved display issues on certain screen resolutions</li>
-                    <li>• Fixed token balance refresh delays</li>
+                    <li>• Verified MacOs bundling - no warnings during installation.</li>
+                    <li>• Native Ledger support/integration.</li>
+                    <li>• Updated UI/UX and default theme.</li>
                   </ul>
                 </div>
               </div>
@@ -297,9 +273,9 @@ export default function AlphaPage() {
         {/* Support Section */}
         <section className="py-20">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4">Need Help?</h2>
+            <h2 className="text-3xl font-bold mb-4">Contact + Feedback</h2>
             <p className="text-gray-400 mb-8">
-              Experiencing issues with the alpha build? Our team is here to help.
+              Experiencing issues with the alpha build? Let the Dev know.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -315,7 +291,7 @@ export default function AlphaPage() {
                 Report Bug
               </a>
               <a 
-                href="https://x.com/unruggable_io"
+                href="https://x.com/bill_papas_12"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-medium py-3 px-6 rounded-xl transition-all"
@@ -333,7 +309,7 @@ export default function AlphaPage() {
       {/* Footer */}
       <footer className="border-t border-gray-800 py-12">
         <div className="max-w-7xl mx-auto px-6 text-center text-gray-500">
-          <p>© 2024 Unruggable. Alpha build for testing purposes only.</p>
+          <p>© 2025 Unruggable. Alpha build for testing purposes only.</p>
         </div>
       </footer>
     </div>
