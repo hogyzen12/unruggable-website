@@ -69,10 +69,10 @@ export default function LandingPage() {
           </div>
         </header>
 
-        {/* Hero Section */}
-        <main className="flex flex-col lg:flex-row items-center justify-between px-6 lg:px-12 py-12 lg:py-20">
+        {/* Hero Section - Better Centered Layout */}
+        <main className="flex flex-col lg:flex-row items-center justify-center px-6 lg:px-12 py-12 lg:py-16 min-h-[70vh]">
           {/* Left Content */}
-          <div className="flex-1 max-w-2xl mb-12 lg:mb-0 lg:pr-12">
+          <div className="flex-1 max-w-2xl mb-12 lg:mb-0 lg:pr-12 text-center lg:text-left">
             {/* Main Headline */}
             <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-8 bg-gradient-to-r from-white via-amber-100 to-amber-200 bg-clip-text text-transparent">
               THE FIRST SOLANA<br />
@@ -86,7 +86,7 @@ export default function LandingPage() {
             </p>
 
             {/* Status Badge */}
-            <div className="flex items-center mb-8">
+            <div className="flex items-center mb-8 justify-center lg:justify-start">
               <div className="bg-amber-500/20 border border-amber-500/30 rounded-full px-4 py-2 flex items-center space-x-2">
                 <div className="w-2 h-2 bg-amber-400 rounded-full animate-pulse"></div>
                 <span className="text-sm font-medium text-amber-200">Closed Alpha • Q4 2025 Release</span>
@@ -94,17 +94,19 @@ export default function LandingPage() {
             </div>
 
             {/* CTA Button */}
-            <Button 
-              onClick={() => setIsWaitlistOpen(true)}
-              className="px-8 py-4 text-lg font-semibold bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
-            >
-              Join Waitlist
-            </Button>
+            <div className="flex justify-center lg:justify-start">
+              <Button 
+                onClick={() => setIsWaitlistOpen(true)}
+                className="px-8 py-4 text-lg font-semibold bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+              >
+                Join Waitlist
+              </Button>
+            </div>
           </div>
 
-          {/* Right Content - Video */}
-          <div className="flex-1 max-w-lg lg:max-w-2xl relative">
-            <div className="relative group">
+          {/* Right Content - Larger Video */}
+          <div className="flex-1 max-w-2xl relative flex justify-center lg:justify-end">
+            <div className="relative group w-full max-w-[700px]">
               <video
                 autoPlay
                 loop
@@ -125,47 +127,72 @@ export default function LandingPage() {
           </div>
         </main>
 
-        {/* Metrics Dashboard Section */}
+        {/* Metrics Dashboard Section - Updated */}
         <section className="px-6 lg:px-12 py-16 mt-12">
           <div className="max-w-6xl mx-auto">
-            {/* Section Header */}
+            {/* Section Header - Updated */}
             <div className="text-center mb-12">
               <h2 className="text-3xl lg:text-4xl font-bold mb-4 bg-gradient-to-r from-white via-amber-100 to-amber-200 bg-clip-text text-transparent">
-                Platform Metrics
+                Unruggable secures over $10M in value
               </h2>
               <p className="text-lg text-white/60">
                 Real-time insights into the Unruggable ecosystem
               </p>
             </div>
 
-            {/* Metrics Grid */}
+            {/* Metrics Grid - Updated Values */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* TVL Card */}
+              {/* TVL Card - Updated */}
               <div className="text-center">
-                <div className="bg-black/20 backdrop-blur-sm border border-white/10 rounded-xl p-6 transition-all duration-300 hover:border-amber-500/30">
-                  <h3 className="text-sm font-medium text-white/60 mb-2">Total Value Locked</h3>
-                  <div className="text-3xl font-bold text-white">$284,392</div>
+                <div className="bg-black/20 backdrop-blur-sm border border-white/10 rounded-xl p-6 transition-all duration-300 hover:border-amber-500/30 hover:scale-105">
+                  <h3 className="text-sm font-medium text-white/60 mb-2">Total Value Secured</h3>
+                  <div className="text-3xl font-bold text-white">$11,122,320</div>
                 </div>
               </div>
 
               {/* Transactions Card */}
               <div className="text-center">
-                <div className="bg-black/20 backdrop-blur-sm border border-white/10 rounded-xl p-6 transition-all duration-300 hover:border-blue-500/30">
+                <div className="bg-black/20 backdrop-blur-sm border border-white/10 rounded-xl p-6 transition-all duration-300 hover:border-blue-500/30 hover:scale-105">
                   <h3 className="text-sm font-medium text-white/60 mb-2">Transactions</h3>
-                  <div className="text-3xl font-bold text-white">89,432</div>
+                  <div className="text-3xl font-bold text-white">9,432</div>
                 </div>
               </div>
 
-              {/* Staked SOL Card */}
+              {/* Staked SOL Card - Updated */}
               <div className="text-center">
-                <div className="bg-black/20 backdrop-blur-sm border border-white/10 rounded-xl p-6 transition-all duration-300 hover:border-purple-500/30">
-                  <h3 className="text-sm font-medium text-white/60 mb-2">Validator Staked</h3>
-                  <div className="text-3xl font-bold text-white">567.2 SOL</div>
+                <div className="bg-black/20 backdrop-blur-sm border border-white/10 rounded-xl p-6 transition-all duration-300 hover:border-purple-500/30 hover:scale-105">
+                  <h3 className="text-sm font-medium text-white/60 mb-2">Unruggable Validator Staked</h3>
+                  <div className="text-3xl font-bold text-white">53,236 SOL</div>
                 </div>
               </div>
             </div>
+          </div>
+        </section>
 
-            {/* Additional Stats Row - Removed for minimalism */}
+        {/* Pre-orders Coming Soon Section */}
+        <section className="px-6 lg:px-12 py-16">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="bg-black/30 backdrop-blur-sm border border-amber-500/20 rounded-2xl p-12 relative overflow-hidden">
+              
+              {/* Background decorations matching your theme */}
+              <div className="absolute top-0 left-0 w-full h-full">
+                <div className="absolute top-10 left-10 w-20 h-20 bg-amber-600/20 rounded-full blur-xl"></div>
+                <div className="absolute bottom-10 right-10 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl"></div>
+              </div>
+              
+              <div className="relative z-10">
+                <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-white via-amber-100 to-amber-200 bg-clip-text text-transparent">
+                  PRE-ORDERS COMING SOON...
+                </h2>
+                
+                <Button 
+                  onClick={() => setIsWaitlistOpen(true)}
+                  className="px-8 py-4 text-lg font-semibold bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+                >
+                  Join Waitlist Now
+                </Button>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -260,6 +287,14 @@ export default function LandingPage() {
         
         .animate-drift-refined-2 {
           animation: drift-refined-2 12s ease-in-out infinite;
+        }
+
+        .bg-gradient-conic {
+          background: conic-gradient(var(--tw-gradient-stops));
+        }
+        
+        .bg-gradient-radial {
+          background: radial-gradient(var(--tw-gradient-stops));
         }
       `}</style>
     </div>
