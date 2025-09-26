@@ -12,9 +12,9 @@ const platforms = [
       </svg>
     ),
     status: 'available',
-    downloadUrl: 'https://github.com/hogyzen12/unruggable-app/releases/download/v1.0.7/unruggable.dmg',
+    downloadUrl: 'https://github.com/hogyzen12/unruggable-app/releases/download/v1.0.8/unruggable.dmg',
     description: 'Compatible with macOS 10.15 and later',
-    version: 'v1.0.7'
+    version: 'v1.0.8'
   },
   {
     name: 'Windows',
@@ -60,9 +60,9 @@ const platforms = [
       </svg>
     ),
     status: 'available',
-    downloadUrl: 'https://github.com/hogyzen12/unruggable-app/releases/download/v1.0.7/unruggable-universal.apk',
+    downloadUrl: 'https://github.com/hogyzen12/unruggable-app/releases/download/v1.0.8/unruggable-universal.apk',
     description: 'APK Sideloading - Enable Unknown Sources',
-    version: 'v1.0.7'
+    version: 'v1.0.8'
   },
   {
     name: 'Google Play',
@@ -262,7 +262,7 @@ export default function AlphaPage() {
             <div className="bg-gray-900 rounded-2xl p-8 border border-gray-800">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                <span className="text-sm font-mono text-green-400">v1.0.7 - Alpha</span>
+                <span className="text-sm font-mono text-green-400">v1.0.8 - Alpha</span>
                 <span className="text-sm text-gray-500">Released 26/09/2025</span>
               </div>
               
