@@ -35,7 +35,7 @@ export default function LandingPage() {
         <header className="flex justify-between items-center px-6 lg:px-12 py-6">
           <div className="flex items-center">
             <Image
-              src="/white_seethru_logo.png"
+              src="/logo_white.svg"
               alt="Unruggable Logo"
               width={40}
               height={40}
@@ -47,7 +47,7 @@ export default function LandingPage() {
           {/* Navigation Links */}
           <div className="flex items-center space-x-6">
             <a 
-              href="https://twitter.com/unruggablehw" 
+              href="https://twitter.com/unruggable_io" 
               target="_blank" 
               rel="noopener noreferrer"
               className="group flex items-center justify-center w-12 h-12 rounded-full border border-white/30 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:border-white/50 hover:scale-105"
@@ -57,7 +57,7 @@ export default function LandingPage() {
               </svg>
             </a>
             <a 
-              href="https://github.com/unruggable-labs" 
+              href="https://github.com/hogyzen12/unruggable-app/releases" 
               target="_blank" 
               rel="noopener noreferrer"
               className="group flex items-center justify-center w-12 h-12 rounded-full border border-white/30 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:border-white/50 hover:scale-105"
