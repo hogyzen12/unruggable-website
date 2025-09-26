@@ -69,10 +69,10 @@ export default function LandingPage() {
           </div>
         </header>
 
-        {/* Hero Section - Better Centered Layout */}
-        <main className="flex flex-col lg:flex-row items-center justify-center px-6 lg:px-12 py-12 lg:py-16 min-h-[70vh]">
+        {/* Hero Section - Improved Layout with Video Higher */}
+        <main className="flex flex-col lg:flex-row items-center justify-center px-6 lg:px-12 py-8 lg:py-12 min-h-[70vh]">
           {/* Left Content */}
-          <div className="flex-1 max-w-2xl mb-12 lg:mb-0 lg:pr-12 text-center lg:text-left">
+          <div className="flex-1 max-w-2xl mb-8 lg:mb-0 lg:pr-12 text-center lg:text-left">
             {/* Main Headline */}
             <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-8 bg-gradient-to-r from-white via-amber-100 to-amber-200 bg-clip-text text-transparent">
               THE FIRST SOLANA<br />
@@ -88,25 +88,16 @@ export default function LandingPage() {
             {/* Status Badge */}
             <div className="flex items-center mb-8 justify-center lg:justify-start">
               <div className="bg-amber-500/20 border border-amber-500/30 rounded-full px-4 py-2 flex items-center space-x-2">
-                <div className="w-2 h-2 bg-amber-400 rounded-full animate-pulse"></div>
+                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                 <span className="text-sm font-medium text-amber-200">Closed Alpha • Q4 2025 Release</span>
               </div>
             </div>
-
-            {/* CTA Button */}
-            <div className="flex justify-center lg:justify-start">
-              <Button 
-                onClick={() => setIsWaitlistOpen(true)}
-                className="px-8 py-4 text-lg font-semibold bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
-              >
-                Join Waitlist
-              </Button>
-            </div>
           </div>
 
-          {/* Right Content - Larger Video */}
-          <div className="flex-1 max-w-2xl relative flex justify-center lg:justify-end">
-            <div className="relative group w-full max-w-[700px]">
+          {/* Right Content - Video Positioned Higher */}
+          <div className="flex-1 max-w-2xl relative flex flex-col items-center lg:items-end">
+            {/* Video moved higher with reduced bottom margin */}
+            <div className="relative group w-full max-w-[700px] mb-6">
               <video
                 autoPlay
                 loop
@@ -123,6 +114,16 @@ export default function LandingPage() {
               
               {/* Video overlay for better integration */}
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>
+            </div>
+
+            {/* Join Waitlist Button - Centered under the video */}
+            <div className="flex justify-center w-full max-w-[700px]">
+              <Button 
+                onClick={() => setIsWaitlistOpen(true)}
+                className="px-12 py-6 text-2xl font-bold bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 transform"
+              >
+                Join Waitlist
+              </Button>
             </div>
           </div>
         </main>
@@ -162,7 +163,7 @@ export default function LandingPage() {
               <div className="text-center">
                 <div className="bg-black/20 backdrop-blur-sm border border-white/10 rounded-xl p-6 transition-all duration-300 hover:border-purple-500/30 hover:scale-105">
                   <h3 className="text-sm font-medium text-white/60 mb-2">Unruggable Validator Staked</h3>
-                  <div className="text-3xl font-bold text-white">53,236 SOL</div>
+                  <div className="text-3xl font-bold text-white">54,926 SOL</div>
                 </div>
               </div>
             </div>
