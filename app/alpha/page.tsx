@@ -12,9 +12,9 @@ const platforms = [
       </svg>
     ),
     status: 'available',
-    downloadUrl: 'https://github.com/hogyzen12/unruggable-app/releases/download/v1.0.8/unruggable.dmg',
+    downloadUrl: 'https://github.com/hogyzen12/unruggable-app/releases/download/v1.0.9/unruggable.dmg',
     description: 'Compatible with macOS 10.15 and later',
-    version: 'v1.0.8'
+    version: 'v1.0.9'
   },
   {
     name: 'Windows',
@@ -23,10 +23,11 @@ const platforms = [
         <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-13.051-1.351"/>
       </svg>
     ),
-    status: 'coming-soon',
-    downloadUrl: '#',
+    status: 'available',
+    downloadUrl: 'https://github.com/hogyzen12/unruggable-app/releases/download/v1.0.9/unruggable-app-windows.zip',
     description: '.exe installer and portable version',
-    version: 'Coming Soon'
+    version: 'v1.0.9',
+    badge: 'Early Alpha'
   },
   {
     name: 'Linux',
@@ -60,9 +61,9 @@ const platforms = [
       </svg>
     ),
     status: 'available',
-    downloadUrl: 'https://github.com/hogyzen12/unruggable-app/releases/download/v1.0.8/unruggable-universal.apk',
+    downloadUrl: 'https://github.com/hogyzen12/unruggable-app/releases/download/v1.0.9/unruggable-universal.apk',
     description: 'APK Sideloading - Enable Unknown Sources',
-    version: 'v1.0.8'
+    version: 'v1.0.9'
   },
   {
     name: 'Google Play',
@@ -81,7 +82,7 @@ const platforms = [
 const faqs = [
   {
     question: "How to Install?",
-    answer: "On macOS, just double click the downloaded .dmg file and drag unruggable into your applications. For Android, download the APK file and enable 'Install from Unknown Sources' in your device settings (Settings > Security > Unknown Sources), then tap the downloaded APK to install."
+    answer: "macOS: Double-click the downloaded .dmg file and drag Unruggable into your Applications folder.\n\nWindows: Extract the .zip file to a folder of your choice, then run the .exe file inside to launch Unruggable.\n\nAndroid: First, enable 'Install from Unknown Sources' in your device settings (Settings > Security > Unknown Sources). Then download the APK file and tap it to install."
   },
   {
     question: "Is the alpha version safe to use?",
@@ -93,7 +94,7 @@ const faqs = [
   },
   {
     question: "What platforms will be supported?",
-    answer: "We currently support macOS and Android via APK sideloading. Google Play Store distribution, iOS TestFlight, and Linux/Windows versions are coming soon. Each platform will enter alpha testing as development progresses."
+    answer: "We currently support macOS, Windows, and Android via APK sideloading. Google Play Store distribution, iOS TestFlight, and Linux versions are coming soon. Each platform will enter alpha testing as development progresses."
   },
   {
     question: "How do I report bugs or provide feedback?",
@@ -133,7 +134,7 @@ export default function AlphaPage() {
           </a>
           <div className="flex items-center gap-4">
             <a 
-              href="https://x.com/unruggable_io" 
+              href="https://x.com/unruggablapp" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors"
@@ -156,22 +157,32 @@ export default function AlphaPage() {
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-6">
+      {/* Main Content */}
+      <main className="max-w-7xl mx-auto px-6 py-12">
         {/* Hero Section */}
-        <section className="py-20 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-500/20 border border-green-500/30 rounded-full text-green-300 text-sm mb-8">
-            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-            Alpha Testing
+        <section className="text-center mb-20">
+          <div className="inline-block mb-6">
+            <img 
+              src="https://cdn.jsdelivr.net/gh/hogyzen12/solana-mobile@main/assets/icons/icon.png" 
+              alt="Unruggable Icon"
+              className="w-20 h-20 rounded-2xl"
+            />
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-green-200 to-white bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
             Unruggable Alpha
           </h1>
           
-          <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
-            The first hardware wallet engineered and designed exclusively for Solana. Now available in Alpha.
+          <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
+            Hot wallet UX. Cold wallet security. Now available in Alpha.
           </p>
 
+          <div className="flex items-center justify-center mb-8">
+            <div className="bg-amber-500/20 border border-amber-500/30 rounded-full px-4 py-2 flex items-center space-x-2">
+              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+              <span className="text-sm font-medium text-amber-200">Closed Alpha • Q4 2025 Release</span>
+            </div>
+          </div>
         </section>
 
         {/* Download Section */}
@@ -191,8 +202,10 @@ export default function AlphaPage() {
                 `}
               >
                 {platform.status === 'available' && (
-                  <div className="absolute -top-2 -right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full">
-                    Ready
+                  <div className={`absolute -top-2 -right-2 text-white text-xs px-2 py-1 rounded-full ${
+                    platform.badge ? 'bg-amber-500' : 'bg-green-500'
+                  }`}>
+                    {platform.badge || 'Ready'}
                   </div>
                 )}
                 
@@ -245,7 +258,7 @@ export default function AlphaPage() {
                   {openFaq === index && (
                     <div className="px-6 pb-6">
                       <div className="border-t border-gray-800 pt-4">
-                        <p className="text-gray-400 leading-relaxed">{faq.answer}</p>
+                        <p className="text-gray-400 leading-relaxed whitespace-pre-line">{faq.answer}</p>
                       </div>
                     </div>
                   )}
@@ -262,19 +275,25 @@ export default function AlphaPage() {
             <div className="bg-gray-900 rounded-2xl p-8 border border-gray-800">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                <span className="text-sm font-mono text-green-400">v1.0.8 - Alpha</span>
-                <span className="text-sm text-gray-500">Released 26/09/2025</span>
+                <span className="text-sm font-mono text-green-400">v1.0.9 - Alpha</span>
+                <span className="text-sm text-gray-500">Released 02/10/2025</span>
               </div>
               
               <div className="space-y-6">
                 <div>
-                  <h4 className="font-semibold text-green-300 mb-2">✨ New Features</h4>
+                  <h4 className="font-semibold text-green-300 mb-2">✨ New Features & Improvements</h4>
                   <ul className="text-gray-300 space-y-1 ml-4">
-                    <li>• Android APK sideloading now available - universal APK support.</li>
-                    <li>• Updated macOS build with enhanced stability.</li>
-                    <li>• Verified MacOs bundling - no warnings during installation.</li>
-                    <li>• Native Ledger support/integration.</li>
-                    <li>• Updated UI/UX and default theme.</li>
+                    <li>• Experimental Windows release - cross-compiled for Windows alpha testing.</li>
+                    <li>• Added refresh with tap functionality.</li>
+                    <li>• Resolved Android padding issue (user reported).</li>
+                    <li>• Added remove wallet feature.</li>
+                    <li>• Added export wallet functionality.</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-blue-300 mb-2">🐛 Bug Fixes</h4>
+                  <ul className="text-gray-300 space-y-1 ml-4">
+                    <li>• Patching user reported bugs across all platforms.</li>
                   </ul>
                 </div>
               </div>
@@ -302,7 +321,6 @@ export default function AlphaPage() {
                 </svg>
                 @ the Dev
               </a>
-              
             </div>
           </div>
         </section>
