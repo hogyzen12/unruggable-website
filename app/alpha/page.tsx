@@ -36,10 +36,11 @@ const platforms = [
         <path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 00-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.132 1.884 1.071.771-.06 1.592-.536 2.257-1.306.631-.765 1.683-1.084 2.378-1.503.348-.199.629-.469.649-.853.023-.4-.2-.811-.714-1.376v-.097l-.003-.003c-.17-.2-.25-.535-.338-.926-.085-.401-.182-.786-.492-1.046h-.003c-.059-.054-.123-.067-.188-.135a.357.357 0 00-.19-.064c.431-1.278.264-2.55-.173-3.694-.533-1.41-1.465-2.638-2.175-3.483-.796-1.005-1.576-1.957-1.56-3.368.026-2.152.236-6.133-3.544-6.139zm.529 3.405h.013c.213 0 .396.062.584.198.19.135.33.332.438.533.105.259.158.459.166.724 0-.02.006-.04.006-.06v.105a.086.086 0 01-.004-.021l-.004-.024a1.807 1.807 0 01-.15.706.953.953 0 01-.213.335.71.71 0 01-.088.069c-.044.061-.06.113-.065.188 0 .08-.018.162-.044.28-.048.199-.108.438-.133.718-.016.08-.01.156-.023.239-.01.065-.021.4-.34.5-.227.07-.543-.024-.688-.322-.123-.256-.069-.58-.069-.532-.01-.446.027-.645.152-.906.135-.316.149-.66.257-.978a.983.983 0 01.041-.36c.013-.03.011-.071.03-.094.026-.03.061-.059.087-.088a.45.45 0 00.026-.055c.063-.155.135-.296.218-.432.08-.129.168-.257.275-.355.107-.096.223-.184.354-.24.13-.055.27-.08.418-.08z"/>
       </svg>
     ),
-    status: 'coming-soon',
-    downloadUrl: '#',
-    description: 'AppImage and .deb packages',
-    version: 'Coming Soon'
+    status: 'available',
+    downloadUrl: 'https://github.com/hogyzen12/unruggable-app/releases/download/v1.0.9/unruggable-linux.zip',
+    description: 'Ubuntu 24 LTS',
+    version: 'v1.0.9',
+    badge: 'Early Alpha'
   },
   {
     name: 'iOS',
@@ -82,7 +83,7 @@ const platforms = [
 const faqs = [
   {
     question: "How to Install?",
-    answer: "macOS: Double-click the downloaded .dmg file and drag Unruggable into your Applications folder.\n\nWindows: Extract the .zip file to a folder of your choice, then run the .exe file inside to launch Unruggable.\n\nAndroid: First, enable 'Install from Unknown Sources' in your device settings (Settings > Security > Unknown Sources). Then download the APK file and tap it to install."
+    answer: "macOS: Double-click the downloaded .dmg file and drag Unruggable into your Applications folder.\n\nWindows: Extract the .zip file to a folder of your choice, then run the .exe file inside to launch Unruggable.\n\nLinux: Extract the .zip file and run the AppImage file. Designed for Ubuntu 24 LTS.\n\nAndroid: First, enable 'Install from Unknown Sources' in your device settings (Settings > Security > Unknown Sources). Then download the APK file and tap it to install."
   },
   {
     question: "Is the alpha version safe to use?",
@@ -94,7 +95,7 @@ const faqs = [
   },
   {
     question: "What platforms will be supported?",
-    answer: "We currently support macOS, Windows, and Android via APK sideloading. Google Play Store distribution, iOS TestFlight, and Linux versions are coming soon. Each platform will enter alpha testing as development progresses."
+    answer: "We currently support macOS, Windows (experimental), Linux (Ubuntu 24 LTS - experimental), and Android via APK sideloading. Google Play Store distribution and iOS TestFlight are coming soon. Each platform will enter alpha testing as development progresses."
   },
   {
     question: "How do I report bugs or provide feedback?",
@@ -276,13 +277,14 @@ export default function AlphaPage() {
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-3 h-3 bg-green-400 rounded-full"></div>
                 <span className="text-sm font-mono text-green-400">v1.0.9 - Alpha</span>
-                <span className="text-sm text-gray-500">Released 02/10/2025</span>
+                <span className="text-sm text-gray-500">Released 03/10/2025</span>
               </div>
               
               <div className="space-y-6">
                 <div>
                   <h4 className="font-semibold text-green-300 mb-2">✨ New Features & Improvements</h4>
                   <ul className="text-gray-300 space-y-1 ml-4">
+                    <li>• Experimental Linux release - Ubuntu 24 LTS support.</li>
                     <li>• Experimental Windows release - cross-compiled for Windows alpha testing.</li>
                     <li>• Added refresh with tap functionality.</li>
                     <li>• Resolved Android padding issue (user reported).</li>
