@@ -189,7 +189,7 @@ export default function AlphaPage() {
         {/* Download Section */}
         <section className="py-12">
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {platforms.map((platform, index) => (
+            {platforms.map((platform, _index) => (
               <button
                 key={platform.name}
                 onClick={() => handleDownload(platform)}

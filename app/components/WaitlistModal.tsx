@@ -35,8 +35,12 @@ export function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
         body: JSON.stringify({ email }),
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
-        throw new Error('Failed to join waitlist');
+        // Use the specific error message from the API
+        setError(data.error || 'Failed to join waitlist. Please try again.');
+        return;
       }
 
       setSuccess(true);
@@ -45,8 +49,8 @@ export function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
         setSuccess(false);
         setEmail('');
       }, 2000);
-    } catch (_err) {
-      setError('Failed to join waitlist. Please try again.');
+    } catch {
+      setError('Unable to connect. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -79,7 +83,15 @@ export function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
               className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-gray-100 focus:outline-none focus:ring-2 focus:ring-[#FF7043] focus:border-transparent"
               disabled={isSubmitting || success}
             />
-            {error && <p className="text-red-400 text-sm text-center">{error}</p>}
+            {error && (
+              <p className={`text-sm text-center ${
+                error.includes('already on our waitlist') 
+                  ? 'text-green-400' 
+                  : 'text-red-400'
+              }`}>
+                {error}
+              </p>
+            )}
             {success && (
               <p className="text-green-400 text-sm text-center">
                 Successfully joined the waitlist!

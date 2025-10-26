@@ -20,7 +20,7 @@ export async function POST(request: Request) {
     }
 
     return NextResponse.json({ success: true })
-  } catch (_error) {
+  } catch {
     return NextResponse.json({ 
       error: 'Unable to join waitlist at this time'
     }, { status: 500 })

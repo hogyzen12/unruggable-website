@@ -14,7 +14,7 @@ export async function GET(request: Request) {
   try {
     const emails = await getWaitlistEmails()
     return NextResponse.json({ emails })
-  } catch (_error) {
+  } catch {
     return NextResponse.json({ 
       error: 'Failed to fetch waitlist'
     }, { status: 500 })

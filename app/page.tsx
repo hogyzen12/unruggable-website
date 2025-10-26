@@ -4,9 +4,27 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { Button } from "./components/ui/button"
 import { WaitlistModal } from './components/WaitlistModal'
+import { useValidatorData } from './hooks/useValidatorData'
+import { useProgressiveTipData } from './hooks/useProgressiveTipData'
+import { useAnimatedCounter } from './hooks/useAnimatedCounter'
 
 export default function LandingPage() {
   const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
+  const { data: validatorData, loading: validatorLoading, error: validatorError } = useValidatorData(60000); // Refresh every 60 seconds
+  const tipData = useProgressiveTipData();
+  
+  // Animated counters for smooth number transitions
+  const animatedTVL = useAnimatedCounter(validatorData?.totalValueUSD || 0, 1500);
+  const animatedStake = useAnimatedCounter(validatorData?.activatedStake || 0, 1500);
+  const animatedTransactions = useAnimatedCounter(tipData.totalTransactions, 800);
+
+  // Helper function to format numbers with commas
+  const formatNumber = (num: number, decimals: number = 0): string => {
+    return new Intl.NumberFormat('en-US', {
+      minimumFractionDigits: decimals,
+      maximumFractionDigits: decimals,
+    }).format(num);
+  };
 
   return (
     <div className="min-h-screen relative text-white overflow-hidden">
@@ -131,41 +149,76 @@ export default function LandingPage() {
         {/* Metrics Dashboard Section - Updated */}
         <section className="px-6 lg:px-12 py-16 mt-12">
           <div className="max-w-6xl mx-auto">
-            {/* Section Header - Updated */}
+            {/* Section Header - Dynamic */}
             <div className="text-center mb-12">
               <h2 className="text-3xl lg:text-4xl font-bold mb-4 bg-gradient-to-r from-white via-amber-100 to-amber-200 bg-clip-text text-transparent">
-                Unruggable secures over $10M in value
+                {validatorData && !validatorLoading 
+                  ? `Unruggable secures over $${Math.floor(validatorData.totalValueUSD / 1000000)}M in value`
+                  : 'Unruggable secures over $10M in value'
+                }
               </h2>
               <p className="text-lg text-white/60">
                 Real-time insights into the Unruggable ecosystem
               </p>
             </div>
 
-            {/* Metrics Grid - Updated Values */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* TVL Card - Updated */}
+            {/* Metrics Grid - Live Data */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* TVL Card - Live Data */}
               <div className="text-center">
                 <div className="bg-black/20 backdrop-blur-sm border border-white/10 rounded-xl p-6 transition-all duration-300 hover:border-amber-500/30 hover:scale-105">
                   <h3 className="text-sm font-medium text-white/60 mb-2">Total Value Secured</h3>
-                  <div className="text-3xl font-bold text-white">$11,122,320</div>
+                  {validatorLoading ? (
+                    <div className="text-3xl font-bold text-white/50 animate-pulse">Loading...</div>
+                  ) : validatorError ? (
+                    <div className="text-xl font-bold text-red-400">Error</div>
+                  ) : validatorData ? (
+                    <div className="text-3xl font-bold text-white">${formatNumber(animatedTVL, 0)}</div>
+                  ) : (
+                    <div className="text-3xl font-bold text-white">$0</div>
+                  )}
                 </div>
               </div>
 
-              {/* Transactions Card */}
-              <div className="text-center">
-                <div className="bg-black/20 backdrop-blur-sm border border-white/10 rounded-xl p-6 transition-all duration-300 hover:border-blue-500/30 hover:scale-105">
-                  <h3 className="text-sm font-medium text-white/60 mb-2">Transactions</h3>
-                  <div className="text-3xl font-bold text-white">9,432</div>
-                </div>
-              </div>
-
-              {/* Staked SOL Card - Updated */}
+              {/* Staked SOL Card - Live Data */}
               <div className="text-center">
                 <div className="bg-black/20 backdrop-blur-sm border border-white/10 rounded-xl p-6 transition-all duration-300 hover:border-purple-500/30 hover:scale-105">
-                  <h3 className="text-sm font-medium text-white/60 mb-2">Unruggable Validator Staked</h3>
-                  <div className="text-3xl font-bold text-white">54,926 SOL</div>
+                  <h3 className="text-sm font-medium text-white/60 mb-2">Validator Staked</h3>
+                  {validatorLoading ? (
+                    <div className="text-3xl font-bold text-white/50 animate-pulse">Loading...</div>
+                  ) : validatorError ? (
+                    <div className="text-xl font-bold text-red-400">Error</div>
+                  ) : validatorData ? (
+                    <div className="text-3xl font-bold text-white">{formatNumber(animatedStake, 0)} SOL</div>
+                  ) : (
+                    <div className="text-3xl font-bold text-white">0 SOL</div>
+                  )}
                 </div>
               </div>
+
+              {/* Transactions Card - Live Data with Progress */}
+              <div className="text-center">
+                <div className="bg-black/20 backdrop-blur-sm border border-white/10 rounded-xl p-6 transition-all duration-300 hover:border-blue-500/30 hover:scale-105">
+                  <h3 className="text-sm font-medium text-white/60 mb-2">Total Transactions</h3>
+                  {tipData.isLoading ? (
+                    <div>
+                      <div className="text-3xl font-bold text-white">{formatNumber(animatedTransactions, 0)}</div>
+                      <div className="mt-2 w-full bg-white/10 rounded-full h-2 overflow-hidden">
+                        <div className="h-full bg-gradient-to-r from-blue-500 to-blue-400 animate-pulse"></div>
+                      </div>
+                      <div className="text-xs text-white/50 mt-1">
+                        Loading...
+                      </div>
+                    </div>
+                  ) : tipData.error ? (
+                    <div className="text-xl font-bold text-red-400">Error</div>
+                  ) : (
+                    <div className="text-3xl font-bold text-white">{formatNumber(animatedTransactions, 0)}</div>
+                  )}
+                </div>
+              </div>
+
+
             </div>
           </div>
         </section>
