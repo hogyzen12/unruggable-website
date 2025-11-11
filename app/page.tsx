@@ -92,7 +92,8 @@ export default function LandingPage() {
           {/* Left Content */}
           <div className="flex-1 max-w-2xl mb-8 lg:mb-0 lg:pr-12 text-center lg:text-left">
             {/* Main Headline */}
-            <h1 className="mx-auto max-w-3xl text-3xl md:text-4xl lg:text-5xl leading-snug md:leading-tight tracking-tight mb-6 text-white/95">
+            {/* Main Headline */}
+            <h1 className="mx-auto max-w-3xl [text-wrap:balance] text-3xl md:text-5xl lg:text-6xl leading-snug md:leading-tight tracking-tight mb-3 text-white/95">
               <span className="block font-semibold bg-gradient-to-r from-white via-amber-100/80 to-amber-200/60 bg-clip-text text-transparent">
                 Solana-native hardware wallet and companion app
               </span>
@@ -101,12 +102,12 @@ export default function LandingPage() {
               </span>
             </h1>
 
-
-
-            {/* Subtitle */}
-            <p className="text-xl lg:text-2xl mb-6 text-white/80 font-medium">
+            {/* Subtitle (smallest in the stack) */}
+            <p className="mx-auto max-w-3xl text-xs md:text-sm lg:text-base mb-6 text-white/75 font-medium">
               Hot wallet UX. Cold wallet security.
             </p>
+
+
 
             {/* Status Badge */}
             <div className="flex items-center mb-8 justify-center lg:justify-start">
