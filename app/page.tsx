@@ -92,11 +92,16 @@ export default function LandingPage() {
           {/* Left Content */}
           <div className="flex-1 max-w-2xl mb-8 lg:mb-0 lg:pr-12 text-center lg:text-left">
             {/* Main Headline */}
-            <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-8 bg-gradient-to-r from-white via-amber-100 to-amber-200 bg-clip-text text-transparent">
-              THE FIRST SOLANA<br />
-              NATIVE HARDWARE<br />
-              WALLET.
+            <h1 className="mx-auto max-w-3xl text-3xl md:text-4xl lg:text-5xl leading-snug md:leading-tight tracking-tight mb-6 text-white/95">
+              <span className="block font-semibold bg-gradient-to-r from-white via-amber-100/80 to-amber-200/60 bg-clip-text text-transparent">
+                Solana-native hardware wallet and companion app
+              </span>
+              <span className="block mt-1 text-sm md:text-base lg:text-lg font-normal text-white/70">
+                Engineered for Solana users, by Solana users.
+              </span>
             </h1>
+
+
 
             {/* Subtitle */}
             <p className="text-xl lg:text-2xl mb-6 text-white/80 font-medium">
@@ -107,7 +112,7 @@ export default function LandingPage() {
             <div className="flex items-center mb-8 justify-center lg:justify-start">
               <div className="bg-amber-500/20 border border-amber-500/30 rounded-full px-4 py-2 flex items-center space-x-2">
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                <span className="text-sm font-medium text-amber-200">Closed Alpha • Q4 2025 Release</span>
+                <span className="text-sm font-medium text-amber-200">Closed Alpha • Hardware pre-orders coming soon</span>
               </div>
             </div>
           </div>

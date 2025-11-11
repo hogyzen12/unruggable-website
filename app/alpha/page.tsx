@@ -181,7 +181,7 @@ export default function AlphaPage() {
           <div className="flex items-center justify-center mb-8">
             <div className="bg-amber-500/20 border border-amber-500/30 rounded-full px-4 py-2 flex items-center space-x-2">
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              <span className="text-sm font-medium text-amber-200">Closed Alpha • Q4 2025 Release</span>
+              <span className="text-sm font-medium text-amber-200">Closed Alpha • Hardware pre-orders coming soon</span>
             </div>
           </div>
         </section>
