@@ -286,7 +286,7 @@ export default function AlphaPage() {
                   <ul className="text-gray-300 space-y-1 ml-4">
                     <li>• Across the board update with feature completions.</li>
                     <li>• Updated UI/UX across all platforms.</li>
-                    <li>• Enhanced stability - marked as "relatively stable".</li>
+                    <li>• Enhanced stability - marked as &quot;relatively stable&quot;.</li>
                     <li>• Continued improvements to Windows and Linux experimental builds.</li>
                   </ul>
                 </div>
