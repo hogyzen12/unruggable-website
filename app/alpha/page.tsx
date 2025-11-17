@@ -12,9 +12,9 @@ const platforms = [
       </svg>
     ),
     status: 'available',
-    downloadUrl: 'https://github.com/hogyzen12/unruggable-app/releases/download/v1.0.9/unruggable.dmg',
+    downloadUrl: 'https://github.com/hogyzen12/unruggable-app/releases/download/1.0.10/unruggable.dmg',
     description: 'Compatible with macOS 10.15 and later',
-    version: 'v1.0.9'
+    version: 'v1.0.10'
   },
   {
     name: 'Windows',
@@ -24,9 +24,9 @@ const platforms = [
       </svg>
     ),
     status: 'available',
-    downloadUrl: 'https://github.com/hogyzen12/unruggable-app/releases/download/v1.0.9/unruggable-app-windows.zip',
+    downloadUrl: 'https://github.com/hogyzen12/unruggable-app/releases/download/1.0.10/unruggable-app-windows.zip',
     description: '.exe installer and portable version',
-    version: 'v1.0.9',
+    version: 'v1.0.10',
     badge: 'Early Alpha'
   },
   {
@@ -37,9 +37,9 @@ const platforms = [
       </svg>
     ),
     status: 'available',
-    downloadUrl: 'https://github.com/hogyzen12/unruggable-app/releases/download/v1.0.9/unruggable-linux.zip',
+    downloadUrl: 'https://github.com/hogyzen12/unruggable-app/releases/download/1.0.10/unruggable-linux.zip',
     description: 'Ubuntu 24 LTS',
-    version: 'v1.0.9',
+    version: 'v1.0.10',
     badge: 'Early Alpha'
   },
   {
@@ -62,9 +62,9 @@ const platforms = [
       </svg>
     ),
     status: 'available',
-    downloadUrl: 'https://github.com/hogyzen12/unruggable-app/releases/download/v1.0.9/unruggable-universal.apk',
+    downloadUrl: 'https://github.com/hogyzen12/unruggable-app/releases/download/1.0.10/unruggable-universal.apk',
     description: 'APK Sideloading - Enable Unknown Sources',
-    version: 'v1.0.9'
+    version: 'v1.0.10'
   },
   {
     name: 'Google Play',
@@ -276,26 +276,25 @@ export default function AlphaPage() {
             <div className="bg-gray-900 rounded-2xl p-8 border border-gray-800">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                <span className="text-sm font-mono text-green-400">v1.0.9 - Alpha</span>
-                <span className="text-sm text-gray-500">Released 03/10/2025</span>
+                <span className="text-sm font-mono text-green-400">v1.0.10 - Alpha</span>
+                <span className="text-sm text-gray-500">Released 11/17/2025</span>
               </div>
-              
+
               <div className="space-y-6">
                 <div>
                   <h4 className="font-semibold text-green-300 mb-2">✨ New Features & Improvements</h4>
                   <ul className="text-gray-300 space-y-1 ml-4">
-                    <li>• Experimental Linux release - Ubuntu 24 LTS support.</li>
-                    <li>• Experimental Windows release - cross-compiled for Windows alpha testing.</li>
-                    <li>• Added refresh with tap functionality.</li>
-                    <li>• Resolved Android padding issue (user reported).</li>
-                    <li>• Added remove wallet feature.</li>
-                    <li>• Added export wallet functionality.</li>
+                    <li>• Across the board update with feature completions.</li>
+                    <li>• Updated UI/UX across all platforms.</li>
+                    <li>• Enhanced stability - marked as &quot;relatively stable&quot;.</li>
+                    <li>• Continued improvements to Windows and Linux experimental builds.</li>
                   </ul>
                 </div>
                 <div>
                   <h4 className="font-semibold text-blue-300 mb-2">🐛 Bug Fixes</h4>
                   <ul className="text-gray-300 space-y-1 ml-4">
-                    <li>• Patching user reported bugs across all platforms.</li>
+                    <li>• Resolved reported bugs across all platforms.</li>
+                    <li>• General stability and performance improvements.</li>
                   </ul>
                 </div>
               </div>
